@@ -1,0 +1,13 @@
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--medium);
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    .list {
+        grid-template-columns: auto;
+    }
+}

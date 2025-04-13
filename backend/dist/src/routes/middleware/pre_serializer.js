@@ -1,0 +1,19 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.serializer = serializer;
+const preSerializer = async (request, reply, payload) => {
+    return {
+        statusCode: reply.statusCode,
+        data: payload,
+        message: 'success',
+    };
+};
+function serializer(data, statusCode) {
+    return JSON.stringify({
+        statusCode,
+        data,
+        message: 'success',
+    });
+}
+exports.default = preSerializer;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJlX3NlcmlhbGl6ZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvcm91dGVzL21pZGRsZXdhcmUvcHJlX3NlcmlhbGl6ZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFzQkEsZ0NBTUM7QUFwQkQsTUFBTSxhQUFhLEdBQUcsS0FBSyxFQUN6QixPQUF1QixFQUN2QixLQUFtQixFQUNuQixPQUFZLEVBQ2tCLEVBQUU7SUFHaEMsT0FBTztRQUNMLFVBQVUsRUFBRSxLQUFLLENBQUMsVUFBVTtRQUM1QixJQUFJLEVBQUUsT0FBTztRQUNiLE9BQU8sRUFBRSxTQUFTO0tBQ25CLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxTQUFnQixVQUFVLENBQUMsSUFBUyxFQUFFLFVBQWtCO0lBQ3RELE9BQU8sSUFBSSxDQUFDLFNBQVMsQ0FBQztRQUNwQixVQUFVO1FBQ1YsSUFBSTtRQUNKLE9BQU8sRUFBRSxTQUFTO0tBQ25CLENBQUMsQ0FBQTtBQUNKLENBQUM7QUFFRCxrQkFBZSxhQUFhLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBGYXN0aWZ5UmVwbHksIEZhc3RpZnlSZXF1ZXN0IH0gZnJvbSAnZmFzdGlmeSdcblxudHlwZSBWaWFsU3VjY2Vzc1Jlc3BvbnNlID0ge1xuICBzdGF0dXNDb2RlOiBudW1iZXJcbiAgbWVzc2FnZTogc3RyaW5nXG4gIGRhdGE6IGFueVxufVxuXG5jb25zdCBwcmVTZXJpYWxpemVyID0gYXN5bmMgKFxuICByZXF1ZXN0OiBGYXN0aWZ5UmVxdWVzdCxcbiAgcmVwbHk6IEZhc3RpZnlSZXBseSxcbiAgcGF5bG9hZDogYW55XG4pOiBQcm9taXNlPFZpYWxTdWNjZXNzUmVzcG9uc2U+ID0+IHtcbiAgLy8gRW5zdXJlIGV2ZXJ5IHJlc3BvbnNlIChub3QgZXJyb3JzKSBoYXZlIHRoZSB7c3RhdHVzQ29kZSwgZGF0YSwgbWVzc2FnZX0gZm9ybWF0XG5cbiAgcmV0dXJuIHtcbiAgICBzdGF0dXNDb2RlOiByZXBseS5zdGF0dXNDb2RlLFxuICAgIGRhdGE6IHBheWxvYWQsXG4gICAgbWVzc2FnZTogJ3N1Y2Nlc3MnLFxuICB9XG59XG5cbmV4cG9ydCBmdW5jdGlvbiBzZXJpYWxpemVyKGRhdGE6IGFueSwgc3RhdHVzQ29kZTogbnVtYmVyKSB7XG4gIHJldHVybiBKU09OLnN0cmluZ2lmeSh7XG4gICAgc3RhdHVzQ29kZSxcbiAgICBkYXRhLFxuICAgIG1lc3NhZ2U6ICdzdWNjZXNzJyxcbiAgfSlcbn1cblxuZXhwb3J0IGRlZmF1bHQgcHJlU2VyaWFsaXplclxuIl19

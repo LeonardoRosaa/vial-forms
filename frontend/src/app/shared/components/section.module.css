@@ -1,0 +1,32 @@
+.section {
+    padding: var(--medium);
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding-bottom: var(--medium);
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.messageContainer {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.header>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

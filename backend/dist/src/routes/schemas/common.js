@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EntityId = void 0;
+const typebox_1 = require("@sinclair/typebox");
+const typebox_base_1 = require("./typebox_base");
+exports.EntityId = typebox_1.Type.Object({
+    id: (0, typebox_base_1.Uuid)(),
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29tbW9uLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vc3JjL3JvdXRlcy9zY2hlbWFzL2NvbW1vbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSwrQ0FBZ0Q7QUFFaEQsaURBQXFDO0FBRXhCLFFBQUEsUUFBUSxHQUFHLGNBQUksQ0FBQyxNQUFNLENBQUM7SUFDbEMsRUFBRSxFQUFFLElBQUEsbUJBQUksR0FBRTtDQUNYLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFN0YXRpYywgVHlwZSB9IGZyb20gJ0BzaW5jbGFpci90eXBlYm94J1xuXG5pbXBvcnQgeyBVdWlkIH0gZnJvbSAnLi90eXBlYm94X2Jhc2UnXG5cbmV4cG9ydCBjb25zdCBFbnRpdHlJZCA9IFR5cGUuT2JqZWN0KHtcbiAgaWQ6IFV1aWQoKSxcbn0pXG5cbmV4cG9ydCB0eXBlIElFbnRpdHlJZCA9IFN0YXRpYzx0eXBlb2YgRW50aXR5SWQ+XG4iXX0=

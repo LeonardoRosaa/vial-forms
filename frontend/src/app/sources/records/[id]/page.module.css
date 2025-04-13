@@ -1,0 +1,12 @@
+.form input {
+    margin-top: 4px;
+}
+
+.form span {
+    color: var(--danger);
+    padding-left: 4px;
+}
+
+.title {
+    margin-bottom: var(--medium);
+}

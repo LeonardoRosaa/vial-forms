@@ -1,0 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Uuid = void 0;
+const typebox_1 = require("@sinclair/typebox");
+const Uuid = (options = {}) => typebox_1.Type.String(Object.assign({ format: 'uuid' }, options));
+exports.Uuid = Uuid;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHlwZWJveF9iYXNlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vc3JjL3JvdXRlcy9zY2hlbWFzL3R5cGVib3hfYmFzZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSwrQ0FBdUQ7QUFFaEQsTUFBTSxJQUFJLEdBQUcsQ0FBQyxVQUF5QyxFQUFFLEVBQUUsRUFBRSxDQUNsRSxjQUFJLENBQUMsTUFBTSxpQkFDVCxNQUFNLEVBQUUsTUFBTSxJQUNYLE9BQU8sRUFDVixDQUFBO0FBSlMsUUFBQSxJQUFJLFFBSWIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBTdHJpbmdPcHRpb25zLCBUeXBlIH0gZnJvbSAnQHNpbmNsYWlyL3R5cGVib3gnXG5cbmV4cG9ydCBjb25zdCBVdWlkID0gKG9wdGlvbnM6IE9taXQ8U3RyaW5nT3B0aW9ucywgJ2Zvcm1hdCc+ID0ge30pID0+XG4gIFR5cGUuU3RyaW5nKHtcbiAgICBmb3JtYXQ6ICd1dWlkJyxcbiAgICAuLi5vcHRpb25zLFxuICB9KVxuIl19

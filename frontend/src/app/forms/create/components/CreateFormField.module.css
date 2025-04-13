@@ -1,0 +1,64 @@
+.deleteButton,
+.deleteButton[type="submit"],
+.deleteButton[type="reset"] {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.deleteButton:hover {
+    color: re;
+}
+
+.formFieldContainer {
+    padding: 30px 0 30px 0;
+    border-bottom: 1px solid var(--foreground)
+}
+
+.fields {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox>input {
+    margin: 0;
+    padding: 0;
+    width: 18px;
+}
+
+.checkbox>span {
+    margin: 0;
+    width: 100%;
+    padding-left: 4px;
+}
+
+.deleteContainer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .fields {
+        grid-template-columns: auto;
+        padding-bottom: 15px;
+    }
+}

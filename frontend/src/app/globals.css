@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Pixelify+Sans:wght@400..700&display=swap');
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #bab7b7;
+  --danger: #dc3545;
+
+  --medium: 25px;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Pixelify Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+main {
+  height: 100vh;
+}
+
+
+a:hover {
+  color: white;
+  transition: ease-in 200ms;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+
+  margin-bottom: 10px;
+  box-sizing: border-box;
+
+  height: 45px;
+}
+
+input[type="checkbox"] {
+  height: 14px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+
+  height: 45px;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  color: var(--foreground);
+
+}
+
+button:hover {
+  color: white;
+  transition: ease-in 200ms;
+}
+
+button:disabled,
+button[disabled] {
+  color: var(--foreground);
+  cursor: auto;
+}
+
+.error-message {
+  min-width: 100%;
+  margin-bottom: var(--medium);
+
+  color: var(--danger);
+  text-align: center;
+}
