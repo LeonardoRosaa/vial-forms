@@ -29,11 +29,6 @@ export default async function handler(req, res) {
 
     await server.ready();
   }
-
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
   
   server.server.emit('request', req, res);
 }
