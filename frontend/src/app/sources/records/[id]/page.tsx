@@ -78,7 +78,7 @@ export default function SourceRecordPage() {
         return <SourceRecordMessage message="Something went wrong" />
 
     } else if (!state.data) {
-        return <SourceRecordMessage message="Your form will appear here" />
+        return <SourceRecordMessage message="The form will appear here" />
     }
 
     return (

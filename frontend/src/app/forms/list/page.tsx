@@ -52,7 +52,7 @@ export default function ListFormsPage() {
     } else if (state.error) {
         return <ListFormsMessage message="Something went wrong" />
     } else if (state.data.length == 0) {
-        return <ListFormsMessage message="Your forms will appear here" />
+        return <ListFormsMessage message="The forms will appear here" />
     }
 
     return (
