@@ -20,7 +20,7 @@ The `/docs` path provides a useful documentation written with [Swagger](https://
 
 ## Front-end
 
-The front-end project uses [Next.js](https://nextjs.org/), a powerful React framework. Libraries like [axios](https://axios-http.com/) are used for making HTTP requests as well.
+The front-end project uses [Next.js](https://nextjs.org/), a powerful React framework.
 
 ### Setup
 

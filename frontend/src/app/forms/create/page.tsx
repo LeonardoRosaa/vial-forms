@@ -10,8 +10,11 @@ import styles from './page.module.css';
 import { IState } from "@/app/shared/interfaces/state";
 import { useRouter } from "next/navigation";
 
-function CreateFormMessage({ error }: { error: boolean }) {
-    return error ? (<p className="error-message">Sorry, something went wrong :/</p>) : (<></>)
+function CreateFormMessage({ error, loading }: { error: boolean, loading: boolean }) {
+    if (loading) return <p className="message">Loading...</p>
+    if (error) return <p className="message error">Something went wrong</p>
+
+    return;
 }
 
 export default function CreateForm() {
@@ -53,6 +56,12 @@ export default function CreateForm() {
 
     async function onSubmit() {
         try {
+            setState({
+                loading: true,
+                error: true,
+                data: false,
+            })
+            
             await storeForm({
                 name: formName,
                 fields: fields
@@ -70,8 +79,8 @@ export default function CreateForm() {
     }
 
     return (
-        <Section action={<button onClick={onSubmit} disabled={disabledToSubmit}>PUBLISH</button>} >
-            <CreateFormMessage error={state.error} />
+        <Section action={<button onClick={onSubmit} disabled={disabledToSubmit || state.loading}>PUBLISH</button>} >
+            <CreateFormMessage error={state.error} loading={state.loading} />
 
             <form className={styles.form}>
                 <input maxLength={250} className={styles.title} type="text" onChange={e => setFormName(e.target.value)} placeholder="Form title" />

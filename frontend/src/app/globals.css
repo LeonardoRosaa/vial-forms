@@ -91,12 +91,15 @@ button[disabled] {
   cursor: auto;
 }
 
-.error-message {
+.message {
   min-width: 100%;
   margin-bottom: var(--medium);
 
-  color: var(--danger);
   text-align: center;
+}
+
+.error {
+  color: var(--danger);
 }
 
 .message-container {
