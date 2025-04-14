@@ -9,8 +9,7 @@ export default async function handler(req, res) {
     server = Fastify({ logger: true });
 
     await server.register(cors, {
-      origin: ['https://vial-forms-frontend.vercel.app/'],
-      credentials: true,
+      origin: ['https://vial-forms-frontend.vercel.app'],
       methods: ['GET', 'OPTIONS', 'PATCH', 'DELETE', 'POST', 'PUT'],
       allowedHeaders: [
         'X-CSRF-Token',
@@ -31,9 +30,6 @@ export default async function handler(req, res) {
   }
 
   if (req.method === 'OPTIONS') {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.status(200).end();
     return;
   }
