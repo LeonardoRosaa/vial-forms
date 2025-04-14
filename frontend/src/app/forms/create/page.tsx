@@ -9,7 +9,7 @@ import Section from "@/app/shared/components/section";
 import styles from './page.module.css';
 import { IState } from "@/app/shared/interfaces/state";
 
-export function CreateFormMessage({ error }: { error: boolean }) {
+function CreateFormMessage({ error }: { error: boolean }) {
     return error ? (<p className="error-message">Sorry, something went wrong :/</p>) : (<></>)
 }
 
