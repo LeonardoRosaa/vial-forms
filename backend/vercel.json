@@ -1,8 +1,12 @@
 {
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/api/serverless.js"
-        }
-    ]
+  "builds": [{
+    "src": "/src/serveless.ts",
+    "use": "@vercel/node"
+}],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/src/serveless.ts"
+    }
+  ]
 }
