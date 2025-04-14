@@ -8,6 +8,7 @@ import { IField } from "../Field";
 import Section from "@/app/shared/components/section";
 import styles from './page.module.css';
 import { IState } from "@/app/shared/interfaces/state";
+import { useRouter } from "next/navigation";
 
 function CreateFormMessage({ error }: { error: boolean }) {
     return error ? (<p className="error-message">Sorry, something went wrong :/</p>) : (<></>)
@@ -23,6 +24,8 @@ export default function CreateForm() {
         data: false,
         error: false,
     })
+    const router = useRouter()
+
 
     useEffect(() => {
         setDisabledToAddition(fields.size == 0 ? false : [...fields.keys()].every((key) => {
@@ -54,6 +57,8 @@ export default function CreateForm() {
                 name: formName,
                 fields: fields
             })
+
+            router.push('/forms/success')
         } catch (err) {
             console.error(err)
             setState({
