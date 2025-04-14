@@ -6,6 +6,7 @@ import { IForm } from "../Form";
 import Link from "next/link";
 import Section from "../../shared/components/section";
 import styles from './page.module.css'
+import { IState } from "@/app/shared/interfaces/state";
 
 function ListFormsMessage({ message }: { message: string }) {
     return (

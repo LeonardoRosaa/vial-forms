@@ -9,6 +9,7 @@ import { useParams, useRouter } from "next/navigation";
 import InputField from "./components/input_field";
 import styles from './page.module.css'
 import { storeSource } from "../../SourcesAPI";
+import { IState } from "@/app/shared/interfaces/state";
 
 function SourceRecordMessage({ message }: { message: string }) {
     return (
@@ -85,7 +86,11 @@ export default function SourceRecordPage() {
             <h1 className={styles.title}>{state.data.name}</h1>
             <form id="forms" onSubmit={onSubmit} className={styles.form}>
                 {
-                    [...state.data.fields.keys()].map(key => <InputField key={key} onChange={onChange} field={state.data?.fields.get(key)!} />)
+                    state.data?.fields && [...state.data.fields.keys()].map(key => {
+                        const field = state.data?.fields.get(key);
+                        if (!field) return null;
+                        return <InputField key={key} onChange={onChange} field={field} />;
+                    })
                 }
             </form>
         </Section>
