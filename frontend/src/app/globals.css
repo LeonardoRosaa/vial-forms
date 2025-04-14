@@ -98,3 +98,11 @@ button[disabled] {
   color: var(--danger);
   text-align: center;
 }
+
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+  height: 50%;
+}

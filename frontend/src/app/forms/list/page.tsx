@@ -51,8 +51,7 @@ export default function ListFormsPage() {
         return <ListFormsMessage message="Loading..." />
     } else if (state.error) {
         return <ListFormsMessage message="Something went wrong" />
-
-    } else if (!state.data) {
+    } else if (state.data.length == 0) {
         return <ListFormsMessage message="Your forms will appear here" />
     }
 

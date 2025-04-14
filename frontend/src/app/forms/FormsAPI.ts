@@ -27,6 +27,7 @@ export async function findAllForms(): Promise<IForm[]> {
     }
 
     const data = await response.json();
+
     return data['data'] as IForm[];
 }
 
