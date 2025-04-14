@@ -37,7 +37,7 @@ export default function CreateForm() {
         setFields(new Map(fields.set(`field-${fields.size}`, { question: "", type: FormTextType.text, required: false, },),),)
     }
 
-    function onChange(id: string, e: any) {
+    function onChange(id: string, e: IField) {
         setFields(new Map(fields.set(id, e)))
     }
 

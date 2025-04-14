@@ -34,6 +34,7 @@ export default function ListFormsPage() {
                     error: false,
                 })
             } catch (err) {
+                console.error(err)
                 setState({
                     loading: false,
                     data: [],

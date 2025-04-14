@@ -27,11 +27,11 @@ export default function SourceRecordPage() {
         error: false,
         data: null
     })
-    const [source, setSource] = useState<Map<String, String>>(new Map())
+    const [source, setSource] = useState<Map<string, string>>(new Map())
     const router = useRouter()
 
-    const onChange = (question: string, answer: string) => setSource(new Map(source.set(question, answer)))  
-    
+    const onChange = (question: string, answer: string) => setSource(new Map(source.set(question, answer)))
+
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
@@ -39,7 +39,9 @@ export default function SourceRecordPage() {
             await storeSource(params.id, source)
 
             router.push(`/sources/success/${params.id}`)
-        } catch(err) {
+        } catch (err) {
+            console.error(err)
+
             setState({
                 loading: false,
                 data: state.data,
@@ -57,6 +59,7 @@ export default function SourceRecordPage() {
                     error: false,
                 })
             } catch (err) {
+                console.error(err)
                 setState({
                     loading: false,
                     error: true,
@@ -82,7 +85,7 @@ export default function SourceRecordPage() {
             <h1 className={styles.title}>{state.data.name}</h1>
             <form id="forms" onSubmit={onSubmit} className={styles.form}>
                 {
-                    [...state.data.fields.keys()].map(key => <InputField key={key.toString()} onChange={onChange} field={state.data?.fields.get(key)!} />)
+                    [...state.data.fields.keys()].map(key => <InputField key={key} onChange={onChange} field={state.data?.fields.get(key)!} />)
                 }
             </form>
         </Section>

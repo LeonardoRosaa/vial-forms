@@ -1,5 +1,4 @@
 import { IField } from "./Field"
-import { FormTextType } from "./FormType"
 
 interface ICreateForm {
     name: string
