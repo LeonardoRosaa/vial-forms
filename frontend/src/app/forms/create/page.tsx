@@ -29,7 +29,6 @@ export default function CreateForm() {
     })
     const router = useRouter()
 
-
     useEffect(() => {
         setDisabledToAddition(fields.size == 0 ? false : [...fields.keys()].every((key) => {
             return fields.get(key)?.question == "";

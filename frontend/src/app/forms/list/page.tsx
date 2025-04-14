@@ -1,67 +1,38 @@
-'use client'
-
-import { useEffect, useState } from "react";
+import { Suspense } from "react";
 import { findAllForms } from "../FormsAPI";
-import { IForm } from "../Form";
 import Link from "next/link";
 import Section from "../../shared/components/section";
 import styles from './page.module.css'
-import { IState } from "@/app/shared/interfaces/state";
+import { ErrorBoundary } from "react-error-boundary";
 
-function ListFormsMessage({ message }: { message: string }) {
+function Message({ message }: { message: string }) {
     return (
-        <Section action={<Link href="/forms/create">CREATE</Link>}>
-            <div className="message-container">
-                <p>{message}</p>
-            </div>
-        </Section>
+        <div className="message-container">
+            <p>{message}</p>
+        </div>
     )
 }
 
-export default function ListFormsPage() {
-    const [state, setState] = useState<IState<IForm[]>>({
-        loading: true,
-        error: false,
-        data: []
-    })
+export async function List() {
+    const forms = await findAllForms()
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const forms = await findAllForms()
-                setState({
-                    loading: false,
-                    data: forms,
-                    error: false,
-                })
-            } catch (err) {
-                console.error(err)
-                setState({
-                    loading: false,
-                    data: [],
-                    error: true,
-                })
+    return forms.length == 0 ? <Message message="The forms will appear here" /> : (
+        <div className={styles.list}>
+            {
+                forms.map((e) => <Link key={e.id} href={`/sources/records/${e.id}`}>{e.name}</Link>)
             }
-        }
+        </div>
+    )
+}
 
-        fetchData()
-    }, []);
-
-    if (state.loading) {
-        return <ListFormsMessage message="Loading..." />
-    } else if (state.error) {
-        return <ListFormsMessage message="Something went wrong" />
-    } else if (state.data.length == 0) {
-        return <ListFormsMessage message="The forms will appear here" />
-    }
-
+export default function Page() {
     return (
         <Section action={<Link href="/forms/create">CREATE</Link>}>
-            <div className={styles.list}>
-                {
-                    state.data.map((e) => <Link key={e.id} href={`/sources/records/${e.id}`}>{e.name}</Link>)
-                }
-            </div>
+            <ErrorBoundary fallback={<Message message="Something went wrong" />}>
+                <Suspense fallback={<Message message="Loading..." />}>
+                    <List />
+                </Suspense>
+            </ErrorBoundary>
         </Section>
     )
 }

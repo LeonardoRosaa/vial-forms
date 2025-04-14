@@ -5,6 +5,7 @@ import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui'
 
 function routes(app, options) {
+    // health endpoint
     app.get('/', async (request, reply) => {
         return { hello: 'world' }
     })

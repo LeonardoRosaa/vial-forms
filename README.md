@@ -35,3 +35,7 @@ NEXT_PUBLIC_BASE_URL=<SERVER URL>
 2. Run `npm i`
 
 3. Run `npm run dev`
+
+## Deployment
+
+Deployed the website on [Vercel](https://vercel.com/) and the server using Vercel Functions. You can access the website [here](https://vial-forms-frontend.vercel.app/).
