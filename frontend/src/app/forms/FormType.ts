@@ -1,5 +1,6 @@
 export enum FormTextType {
     text = "text",
     date = "date",
-    number = "number"
+    number = "number",
+    textarea = "textarea"
 }

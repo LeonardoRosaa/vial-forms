@@ -1,5 +1,5 @@
 export interface IFormField {
-    type: 'text' | 'date' | 'number'
+    type: 'text' | 'date' | 'number' | 'textarea'
     question: string
     required: boolean
 }

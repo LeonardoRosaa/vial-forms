@@ -33,7 +33,7 @@ export const CreateFormSchema = {
             type: 'object',
             required: ['type', 'question', 'required'],
             properties: {
-              type: { type: 'string', enum: ['text', 'date', 'number'] },
+              type: { type: 'string', enum: ['text', 'date', 'number', 'textarea'] },
               question: {
                 type: 'string', maxLength: 250,
               },

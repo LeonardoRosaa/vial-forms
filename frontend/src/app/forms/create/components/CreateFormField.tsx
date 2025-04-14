@@ -34,6 +34,7 @@ export default function CreateFormField({ id, onChange, onDelete }: ICreateFormF
                 <input maxLength={250} type="text" value={question} onChange={handleQuestion} placeholder="Type a question here" />
                 <select value={type} onChange={handleType}>
                     <option value="text">text</option>
+                    <option value="textarea">long text</option>
                     <option value="number">number</option>
                     <option value="date">date</option>
                 </select>
