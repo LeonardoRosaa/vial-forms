@@ -1,7 +1,8 @@
-import axios from "axios";
 import { ICreateForm } from "./CreateFormModel";
 import { IForm } from "./Form";
 import { IField } from "./Field";
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export async function storeForm(form: ICreateForm): Promise<void> {
     const json = {
@@ -9,21 +10,37 @@ export async function storeForm(form: ICreateForm): Promise<void> {
         fields: Object.fromEntries(form.fields)
     };
 
-    return axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/form`, json)
+    await fetch(`${BASE_URL}/form`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(json)
+    });
 }
 
 export async function findAllForms(): Promise<IForm[]> {
-    const forms = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/form`)
+    const response = await fetch(`${BASE_URL}/form`);
 
-    return forms.data['data'] as IForm[]
+    if (!response.ok) {
+        throw new Error(`Failed to fetch forms: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data['data'] as IForm[];
 }
 
 export async function findOneForm(id: string): Promise<IForm> {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/form/${id}`)
-    const raw = response.data['data']
+    const response = await fetch(`${BASE_URL}/form/${id}`);
+
+    if (!response.ok) {
+        throw new Error(`Failed to fetch form ${id}: ${response.statusText}`);
+    }
+
+    const raw = (await response.json())['data'];
 
     return {
         ...raw,
         fields: new Map<string, IField>(Object.entries(raw.fields))
-    }
+    };
 }
