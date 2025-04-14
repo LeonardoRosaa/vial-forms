@@ -10,6 +10,7 @@ export default async function handler(req, res) {
 
     await server.register(cors, {
       origin: ['https://vial-forms-frontend.vercel.app'],
+      credentials: true,
       methods: ['GET', 'OPTIONS', 'PATCH', 'DELETE', 'POST', 'PUT'],
       allowedHeaders: [
         'X-CSRF-Token',
