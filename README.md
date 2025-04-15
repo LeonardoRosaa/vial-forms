@@ -22,7 +22,7 @@ DATABASE_URL="postgres://vial:vial@vial-backend-b:5432/vial?schema=public"
 
 4. Run `npm run migrate`
 
-The `/docs` path provides a useful documentation written with [Swagger](https://swagger.io/).
+The `/docs` path provides a useful documentation written with [Swagger](https://swagger.io/). Click [here](https://vial-forms.vercel.app/docs) to access the `/docs` in production.
 
 ## Front-end
 
