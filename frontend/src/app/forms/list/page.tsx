@@ -13,7 +13,7 @@ function Message({ message }: { message: string }) {
     )
 }
 
-export async function List() {
+async function List() {
     const forms = await findAllForms()
 
     return forms.length == 0 ? <Message message="The forms will appear here" /> : (
