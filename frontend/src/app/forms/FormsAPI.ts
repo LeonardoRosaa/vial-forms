@@ -20,7 +20,7 @@ export async function storeForm(form: ICreateForm): Promise<void> {
 }
 
 export async function findAllForms(): Promise<IForm[]> {
-    const response = await fetch(`${BASE_URL}/form`);
+    const response = await fetch(`${BASE_URL}/form`, { cache: 'no-store' });
 
     if (!response.ok) {
         throw new Error(`Failed to fetch forms: ${response.statusText}`);
