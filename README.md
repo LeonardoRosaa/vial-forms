@@ -10,11 +10,17 @@ The back-end is built with [Fastify](https://fastify.dev/), a Node.js framework.
 
 Follow the guide below to run the project.
 
-1. Run `docker compose build`
+1. Copy this `.env` file and configure the `DATABASE_URL`:
 
-2. Run `docker compose up` 
+```
+DATABASE_URL="postgres://vial:vial@vial-backend-b:5432/vial?schema=public"
+```
 
-3. Run `npm run migrate`
+2. Run `docker compose build`
+
+3. Run `docker compose up` 
+
+4. Run `npm run migrate`
 
 The `/docs` path provides a useful documentation written with [Swagger](https://swagger.io/).
 
